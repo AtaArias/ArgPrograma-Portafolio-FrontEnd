@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-inst-card',
@@ -7,14 +7,12 @@ import { Component } from '@angular/core';
 })
 export class InstCardComponent {
 
-  cardContent: string;
-  title: string;
-  iconUrl: string;
+  @Input() cardContent: string = "Contenido de la tarjeta";
+  @Input() title: string = "Título de la tarjeta";
+  @Input() iconUrl: string = "";
 
   constructor(){
-    this.cardContent = "Contenido de la tarjeta";
-    this.title = "Harvard"
-    this.iconUrl = "http://clipground.com/images/harvard-clipart-4.jpg";
+
   }
-  
+
 }

@@ -1,5 +1,6 @@
 <div class="border">
     <h2> {{ title }} </h2>
 
-    <app-inst-card></app-inst-card>
+    <app-inst-card *ngFor="let card of cards"
+        [title]="card.title" [cardContent]="card.content" [iconUrl]="card.iconUrl"></app-inst-card>
 </div>

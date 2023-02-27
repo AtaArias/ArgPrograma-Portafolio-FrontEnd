@@ -10,6 +10,6 @@ export class ExperienceComponent {
   title: string;
 
   constructor() {
-    this.title = "Experince";
+    this.title = "Experience";
   }
 }
