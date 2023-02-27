@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DFFFFF;
+    margin: 0;
+}
+
+.border {
+    padding: 0 50px;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

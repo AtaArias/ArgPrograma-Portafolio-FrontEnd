@@ -1,0 +1,17 @@
+nav {
+    background-color: #38B3CCff;
+    padding: 0px 30px;
+}
+
+.banner {
+    color: white;
+    height: 400px;
+    background-color: black;
+}
+
+.banner img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+}

@@ -1,0 +1,30 @@
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.icon img {
+    width: 170px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin:auto;
+}
+
+.icon p {
+    text-align: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.about{
+    padding:15px;
+    display:grid;
+    grid-template-columns: 25% 75%;
+    justify-items: center;
+    align-items: center;
+}

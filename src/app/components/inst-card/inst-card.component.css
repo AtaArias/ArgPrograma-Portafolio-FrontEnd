@@ -1,0 +1,12 @@
+.card-item img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.card-item {
+    margin: 25px 0px;
+    display: grid;
+
+    grid-template-columns: 1fr 4fr;
+}
