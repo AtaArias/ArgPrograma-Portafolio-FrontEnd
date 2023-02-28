@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICard } from 'src/app/ICard';
 
 @Component({
   selector: 'app-education',
@@ -6,10 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent {
-
   title: string;
 
-  cards: { title:string; iconUrl:string; content:string}[];
+  showForm: boolean = false;
+
+  cards: ICard[];
+
+  toggleForm() {
+    this.showForm = !this.showForm
+  }
+
+  myAddCard = (title: string, iconUrl: string, content: string): void => {
+    this.toggleForm();
+    this.cards.push({title: title, iconUrl: iconUrl, content: content});
+  }
 
   constructor() {
     this.title = "Education";

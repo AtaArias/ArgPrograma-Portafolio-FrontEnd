@@ -1,0 +1,21 @@
+<form>
+    <div class="row">
+        <div class="col-1">
+            <label for="iconUrl"> <p> Url del ícono <p> </label>
+            <input type="text" name="iconUrl" id="iconUrl" #icon>
+        </div>
+
+        <div class="col-4">
+            <label for="cardTitle"> <p> Título de la carta <p></label>
+            <input type="text" name="cardTitle" id="cardTitle" #title>
+        </div>
+
+    </div>
+
+    <label for="cardContent"> <p>Contenido de la tarjeta </p></label>
+    <textarea placeholder="Additional details..." id="cardContent" #content></textarea>
+
+    <button type="button" class="outline" (click)="addCard(title.value, icon.value, content.value)">
+        Agregar targeta
+    </button>
+</form>

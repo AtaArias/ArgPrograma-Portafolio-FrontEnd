@@ -10,6 +10,10 @@
     margin:auto;
 }
 
+.icon img:hover {
+    filter: blur(2px);
+}
+
 .icon p {
     text-align: center;
 }

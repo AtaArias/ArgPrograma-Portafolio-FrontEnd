@@ -1,6 +1,14 @@
 <div class="border">
-    <h2> {{ title }} </h2>
+    <div class="flex">
+        <h2> {{ title }} </h2>
+        <button class="outline" (click)="toggleForm()">Add Card</button>
+    </div>
+    
+    <app-new-card-form *ngIf="showForm" [addCard]="myAddCard"></app-new-card-form>
 
     <app-inst-card *ngFor="let card of cards"
-        [title]="card.title" [cardContent]="card.content" [iconUrl]="card.iconUrl"></app-inst-card>
+        [title]="card.title"
+        [iconUrl]="card.iconUrl" 
+        [cardContent]="card.content">
+    </app-inst-card>
 </div>
