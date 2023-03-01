@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ICard } from 'src/app/ICard';
+import { Card } from '../inst-card/inst-card.model';
 
 @Component({
   selector: 'app-experience',
@@ -12,7 +12,7 @@ export class ExperienceComponent {
   
   addCardForm: boolean = false;
 
-  cards: ICard[] = [];
+  cards: Card[] = [];
 
 
   constructor() {
@@ -23,9 +23,15 @@ export class ExperienceComponent {
     this.addCardForm = !this.addCardForm;
   }
 
+  // make a product list element
+
   // TODO: change the input from singular elements to an ICard object
   myAddCard = (title: string, iconUrl: string, content: string): void => {
-    this.cards.push({title: title, iconUrl: iconUrl, content: content});
+    this.cards.push( new Card({title: title, iconUrl: iconUrl, content: content}));
     this.addCardToggle();
-  }  
+  }
+  
+  removeCard(card: Card){
+    this.cards.splice(this.cards.indexOf(card), 1);
+  }
 }

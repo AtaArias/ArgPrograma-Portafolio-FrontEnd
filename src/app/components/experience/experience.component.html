@@ -6,9 +6,8 @@
 
     <app-new-card-form *ngIf="addCardForm" [addCard]="myAddCard"></app-new-card-form>
 
-    <app-inst-card *ngFor="let card of cards"
-        [title]="card.title"  
-        [iconUrl]="card.iconUrl"
-        [cardContent]="card.content">
+    <app-inst-card *ngFor="let fooCard of cards"
+        [card]="fooCard"
+        (click)="removeCard(fooCard)">
     </app-inst-card>
 </div>

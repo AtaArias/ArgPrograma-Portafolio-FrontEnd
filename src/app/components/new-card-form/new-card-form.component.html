@@ -15,7 +15,7 @@
     <label for="cardContent"> <p>Contenido de la tarjeta </p></label>
     <textarea placeholder="Additional details..." id="cardContent" #content></textarea>
 
-    <button type="button" class="outline" (click)="addCard(title.value, icon.value, content.value)">
+    <button class="outline" (click)="addCard(icon.value, title.value, content.value)">
         Agregar targeta
     </button>
 </form>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ICard } from 'src/app/ICard';
+import { Card } from '../inst-card/inst-card.model';
 
 @Component({
   selector: 'app-education',
@@ -8,26 +8,38 @@ import { ICard } from 'src/app/ICard';
 })
 export class EducationComponent {
   title: string;
+  
+  addCardForm: boolean = false;
 
-  showForm: boolean = false;
+  cards: Card[] = [];
 
-  cards: ICard[];
-
-  toggleForm() {
-    this.showForm = !this.showForm
+  addCardToggle(){
+    this.addCardForm = !this.addCardForm;
   }
 
+  // make a product list element
+
+  // TODO: change the input from singular elements to an ICard object
   myAddCard = (title: string, iconUrl: string, content: string): void => {
-    this.toggleForm();
-    this.cards.push({title: title, iconUrl: iconUrl, content: content});
+    this.cards.push( new Card({title: title, iconUrl: iconUrl, content: content}));
+    this.addCardToggle();
   }
 
   constructor() {
     this.title = "Education";
 
     this.cards = [
-      {title:"Unsl", iconUrl:"http://www.noticias.unsl.edu.ar/wp-content/themes/sirius-lite/assets/img/isologo_unsl_color_footer.png", content:"Actualmente estudiando física"},
-      {title:"Harvard", iconUrl:"http://clipground.com/images/harvard-clipart-4.jpg" ,content:"CS50"}
+      new Card({title:"Unsl", 
+              iconUrl:"http://www.noticias.unsl.edu.ar/wp-content/themes/sirius-lite/assets/img/isologo_unsl_color_footer.png", 
+              content:"Actualmente estudiando física"}),
+              
+      new Card({title:"Harvard", 
+              iconUrl:"http://clipground.com/images/harvard-clipart-4.jpg" ,
+              content:"CS50"})
     ]
+  }
+
+  removeCard(card: Card){
+    this.cards.splice(this.cards.indexOf(card), 1);
   }
 }
