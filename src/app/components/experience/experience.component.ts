@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Card } from '../inst-card/inst-card.model';
+
+import { CardManagerService } from 'src/app/services/card-manager.service';
 
 @Component({
   selector: 'app-experience',
@@ -12,11 +15,20 @@ export class ExperienceComponent {
   
   addCardForm: boolean = false;
 
-  cards: Card[] = [];
+  cards: Card[];
 
 
-  constructor() {
+  constructor(private cardService: CardManagerService) {
     this.title = "Experience";
+  }
+
+  ngOnInit(): void {
+    
+    //subscibre of observable waits
+    this.cardService.getExperienceCards().subscribe((cards)=> 
+      this.cards = cards
+    );
+
   }
 
   addCardToggle(){

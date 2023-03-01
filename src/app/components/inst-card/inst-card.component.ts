@@ -10,11 +10,17 @@ import { Card } from './inst-card.model';
 export class InstCardComponent {
   @Input() card: Card;
 
+  @Output() deleteCard: EventEmitter<Card> = new EventEmitter;
+
   constructor(){
     
   }
 
+  clickedDelete(){
+    this.deleteCard.emit(this.card);
+  }
+
   // add a way for the card to delete itself
-  
+
 
 }

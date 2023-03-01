@@ -11,7 +11,7 @@ export class EducationComponent {
   
   addCardForm: boolean = false;
 
-  cards: Card[] = [];
+  cards: Card[];
 
   addCardToggle(){
     this.addCardForm = !this.addCardForm;
@@ -32,7 +32,7 @@ export class EducationComponent {
       new Card({title:"Unsl", 
               iconUrl:"http://www.noticias.unsl.edu.ar/wp-content/themes/sirius-lite/assets/img/isologo_unsl_color_footer.png", 
               content:"Actualmente estudiando física"}),
-              
+
       new Card({title:"Harvard", 
               iconUrl:"http://clipground.com/images/harvard-clipart-4.jpg" ,
               content:"CS50"})

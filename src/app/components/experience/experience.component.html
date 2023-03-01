@@ -8,6 +8,6 @@
 
     <app-inst-card *ngFor="let fooCard of cards"
         [card]="fooCard"
-        (click)="removeCard(fooCard)">
+        (deleteCard)="removeCard($event)">
     </app-inst-card>
 </div>
