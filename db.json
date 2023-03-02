@@ -1,7 +1,17 @@
 {
-    "experience":[
-        {"title":"Ninguna", 
-        "iconUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Icon_None.svg/100px-Icon_None.svg.png", 
-        "content":"I haven't had any experience"}
-    ]
+  "experience": [],
+  "education": [
+    {
+      "id": 0,
+      "title": "Unsl",
+      "iconUrl": "http://iyp.fcejs.unsl.edu.ar/wp-content/uploads/2018/11/logo-UNSL.png",
+      "content": "Actualmente estudiando física"
+    },
+    {
+      "id": 1,
+      "title": "Harvard",
+      "iconUrl": "http://clipground.com/images/harvard-clipart-4.jpg",
+      "content": "CS50"
+    }
+  ]
 }

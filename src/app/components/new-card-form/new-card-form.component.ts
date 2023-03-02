@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-new-card-form',
   templateUrl: './new-card-form.component.html',

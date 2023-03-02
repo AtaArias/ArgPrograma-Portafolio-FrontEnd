@@ -1,12 +1,13 @@
 <div class="border">
     <div class="flex">
         <h2> {{ title }} </h2>
-        <button class="outline" (click)="addCardToggle()">Add Card</button>
+        <button class="outline" (click)="addCardToggle()" *ngIf="editMode()">Add Card</button>
     </div>
     
     <app-new-card-form *ngIf="addCardForm" [addCard]="myAddCard"></app-new-card-form>
 
     <app-inst-card *ngFor="let fooCard of cards"
+        [edit]="editMode()"
         [card]="fooCard"
         (deleteCard)="removeCard($event)"
         >

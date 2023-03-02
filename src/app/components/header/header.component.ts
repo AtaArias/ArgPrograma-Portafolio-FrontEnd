@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,11 @@ export class HeaderComponent {
 
   bannerImageUrl:string;
 
-  constructor(){
+  constructor(private authService: AuthService){
     this.bannerImageUrl = "https://www.glowgraphics.co.uk/wp-content/uploads/2017/12/portfolio-banner.jpg";
+  }
+
+  sendLogIn(): void {
+    this.authService.login("user", "1234");
   }
 }

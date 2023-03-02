@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { CardManagerService } from 'src/app/services/card-manager.service';
 import { Card } from '../inst-card/inst-card.model';
 
 @Component({
@@ -17,29 +19,33 @@ export class EducationComponent {
     this.addCardForm = !this.addCardForm;
   }
 
-  // make a product list element
-
-  // TODO: change the input from singular elements to an ICard object
   myAddCard = (title: string, iconUrl: string, content: string): void => {
-    this.cards.push( new Card({title: title, iconUrl: iconUrl, content: content}));
+    let myCard: Card = new Card({title: title, iconUrl: iconUrl, content: content});
+    
+    this.cardManager.addEducationCard(myCard).subscribe( (card) => 
+     {
+      this.cards.push(card);
+     })
     this.addCardToggle();
   }
 
-  constructor() {
+  constructor(private cardManager: CardManagerService, private authService: AuthService) {
     this.title = "Education";
+  }
 
-    this.cards = [
-      new Card({title:"Unsl", 
-              iconUrl:"http://www.noticias.unsl.edu.ar/wp-content/themes/sirius-lite/assets/img/isologo_unsl_color_footer.png", 
-              content:"Actualmente estudiando física"}),
+  ngOnInit(): void {
+    this.cardManager.getEducationCards().subscribe((cards) => {
+      this.cards = cards;}
+    )
+  }
 
-      new Card({title:"Harvard", 
-              iconUrl:"http://clipground.com/images/harvard-clipart-4.jpg" ,
-              content:"CS50"})
-    ]
+  editMode(): boolean {
+    return this.authService.logIn;
   }
 
   removeCard(card: Card){
-    this.cards.splice(this.cards.indexOf(card), 1);
+    this.cardManager.deleteEducationCard(card).subscribe( () => {
+      this.cards.splice(this.cards.indexOf(card), 1);
+    }) 
   }
 }

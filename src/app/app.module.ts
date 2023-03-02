@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
@@ -10,6 +11,9 @@ import { InstCardComponent } from './components/inst-card/inst-card.component';
 import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { NewCardFormComponent } from './components/new-card-form/new-card-form.component';
+import { LogInPageComponent } from './components/log-in-page/log-in-page.component';
+import { PortofolioComponent } from './components/portofolio/portofolio.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +24,14 @@ import { NewCardFormComponent } from './components/new-card-form/new-card-form.c
     InstCardComponent,
     EducationComponent,
     SkillsComponent,
-    NewCardFormComponent
+    NewCardFormComponent,
+    LogInPageComponent,
+    PortofolioComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

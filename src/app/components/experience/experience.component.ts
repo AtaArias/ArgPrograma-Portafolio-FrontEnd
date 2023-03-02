@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Card } from '../inst-card/inst-card.model';
 
 import { CardManagerService } from 'src/app/services/card-manager.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-experience',
@@ -18,7 +19,7 @@ export class ExperienceComponent {
   cards: Card[];
 
 
-  constructor(private cardService: CardManagerService) {
+  constructor(private cardService: CardManagerService, private authService: AuthService) {
     this.title = "Experience";
   }
 
@@ -35,15 +36,23 @@ export class ExperienceComponent {
     this.addCardForm = !this.addCardForm;
   }
 
-  // make a product list element
 
-  // TODO: change the input from singular elements to an ICard object
+  editMode(): boolean {
+    return this.authService.logIn;
+  }
+
   myAddCard = (title: string, iconUrl: string, content: string): void => {
-    this.cards.push( new Card({title: title, iconUrl: iconUrl, content: content}));
+    let myCard: Card = new Card({title: title, iconUrl: iconUrl, content: content});
+    
     this.addCardToggle();
+    this.cardService.addExperienceCard(myCard).subscribe((card) => {
+      this.cards.push(card);
+    });
   }
   
   removeCard(card: Card){
-    this.cards.splice(this.cards.indexOf(card), 1);
+    this.cardService.deleteExperienceCard(card).subscribe(() => {
+      this.cards.splice(this.cards.indexOf(card),1);
+    })
   }
 }
