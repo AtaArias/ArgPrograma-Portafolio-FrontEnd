@@ -9,17 +9,23 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string) {
+  login(username: string, password: string):boolean {
     // http logic and jwt autentication
 
     this.token = (username == "user" && password == "1234");
+
+    if(this.token) {
+      localStorage.setItem("log-token", "logeado")
+    }
+
+    return this.token;
   }
 
   logout():void {
-    this.token = false;
+    localStorage.removeItem("log-token")
   }
 
   public get logIn(): boolean {
-    return this.token;
+    return (localStorage.getItem("log-token") != null);
   }
 }

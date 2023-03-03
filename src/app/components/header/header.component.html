@@ -6,12 +6,12 @@
     </div>
 
     <div>
-        <a routerLink="/logIn">
+        <a routerLink="/logIn" *ngIf="!authService.logIn">
         Redes sociales | Log in
         </a>
 
-        <button (click)="sendLogIn()">
-            Modo de edición
+        <button *ngIf="authService.logIn" (click)="authService.logout()">
+            Log Out
         </button>
     </div>
 </nav>

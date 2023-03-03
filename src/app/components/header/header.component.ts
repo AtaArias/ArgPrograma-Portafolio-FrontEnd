@@ -10,11 +10,7 @@ export class HeaderComponent {
 
   bannerImageUrl:string;
 
-  constructor(private authService: AuthService){
+  constructor(public authService: AuthService){
     this.bannerImageUrl = "https://www.glowgraphics.co.uk/wp-content/uploads/2017/12/portfolio-banner.jpg";
-  }
-
-  sendLogIn(): void {
-    this.authService.login("user", "1234");
   }
 }
