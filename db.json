@@ -1,12 +1,13 @@
 {
-  "experience": [],
-  "education": [
+  "experience": [
     {
-      "id": 0,
-      "title": "Unsl",
-      "iconUrl": "http://iyp.fcejs.unsl.edu.ar/wp-content/uploads/2018/11/logo-UNSL.png",
-      "content": "Actualmente estudiando física"
-    },
+      "id": 1,
+      "title": "Tuerca 9",
+      "iconUrl": "asdf",
+      "content": "tuercón"
+    }
+  ],
+  "education": [
     {
       "id": 1,
       "title": "Harvard",

@@ -2,17 +2,21 @@
     <h2>Iniciar sesión</h2>
     <form [formGroup]="logInForm"
         (ngSubmit)="onSubmit(logInForm.value)"
-        [style.background]="(logInForm.valid) ? 'white' : 'aquamarine'"
+        class="flex"
+        autocomplete="off"
     >
-        <div class="wing-form-group">
+        <div>
             <label for="usuario">Usuario:</label>
             <input  type="text" 
                     id="usuario" 
                     name="usuario"
                     placeholder="Nombre de usuario"
                     formControlName="user"
-                    class="wing-form-control"
+                    [class.error]="!userInput.valid && userInput.touched"
                     >
+            <div class="inputError" *ngIf="userInput.hasError('required')">
+                Debe llenar este espacio
+            </div>
         </div>
         <div class="wing-form-group">
             <label for="contraseña">Contraseña:</label>
@@ -20,11 +24,15 @@
                     id="contraseña" 
                     name="contraseña"
                     placeholder="Contraseña"
-                    formControlName="password" 
-                    class="wing-form-control">
+                    formControlName="password"
+                    [class.error]="!passInput.valid && passInput.touched"
+                    >
+            <div class="inputError" *ngIf="passInput.hasError('required')">
+                Debe llenar este espacio
+            </div>
         </div>
 
-        <button type="submit" class="wing-btn-primary">Iniciar sesión</button>
+        <button type="submit" [class.disabled]="!logInForm.valid"> Enviar </button>
         
     </form>
 </div>
