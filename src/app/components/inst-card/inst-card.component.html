@@ -1,15 +1,45 @@
-<div class="card-item">
-    <img src="{{card.iconUrl}}" alt="">
+<div class="card-item" *ngIf="!editSelf">
+    <div>
+        <img src="{{card.iconUrl}}" alt="">
+    </div>
     <div>
         <div class="flex">
             <h3>
                 {{ card.title }}
             </h3>
             <div class="flex" *ngIf="edit">
-                <button> edit </button>
+                <button (click)="editSelfToggle()"> edit </button>
                 <button (click)="clickedDelete()"> delete </button>
             </div>
         </div>
         <p> {{ card.content }}</p>
     </div>
 </div>
+
+<form *ngIf="editSelf">
+    <div class="card-item">
+        <div>
+            <label for="iconUrl"> <h3> Icon Url </h3> </label>
+            <textarea name="iconUrl" placeholder="Aditional details" value="{{card.iconUrl}}"> </textarea>
+        </div>
+
+        <div>
+            <div>
+                <div class="flex">
+                    <label for="title"> <h3> Title </h3>  </label>
+
+                    <div class="flex">
+                        <button (click)="clickedSave()"> Save </button>
+                        <button (click)="editSelfToggle()"> Cancel </button>
+                    </div>
+                </div>
+                <input type="text" name="title" value="{{card.title}}">
+            </div>
+
+            <div>
+                <label for="content"> Contenido </label>
+                <textarea name="content" placeholder="Contenido" value="{{card.content}}"> </textarea>
+            </div>
+        </div>
+    </div>
+</form>

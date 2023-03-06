@@ -19,33 +19,39 @@ export class EducationComponent {
     this.addCardForm = !this.addCardForm;
   }
 
-  myAddCard = (title: string, iconUrl: string, content: string): void => {
-    let myCard: Card = new Card({title: title, iconUrl: iconUrl, content: content});
-    
-    this.cardManager.addEducationCard(myCard).subscribe( (card) => 
-     {
-      this.cards.push(card);
-     })
-    this.addCardToggle();
-  }
-
   constructor(private cardManager: CardManagerService, private authService: AuthService) {
     this.title = "Education";
   }
 
-  ngOnInit(): void {
-    this.cardManager.getEducationCards().subscribe((cards) => {
-      this.cards = cards;}
+  updateCards() {
+    this.cardManager.getEducationCards().subscribe((cards) => 
+      this.cards = cards
     )
+  } 
+
+  ngOnInit(): void {
+    this.updateCards();
   }
 
   editMode(): boolean {
     return this.authService.logIn;
   }
 
+  myAddCard = (title: string, iconUrl: string, content: string): void => {
+    let myCard: Card = new Card({title: title, iconUrl: iconUrl, content: content});
+    
+    this.cardManager.addEducationCard(myCard).subscribe( (message) => 
+     {
+      console.log(message);
+      this.updateCards();
+      this.addCardToggle();
+     })
+  }
+
   removeCard(card: Card){
-    this.cardManager.deleteEducationCard(card).subscribe( () => {
+    this.cardManager.deleteEducationCard(card).subscribe( (message) => {
       this.cards.splice(this.cards.indexOf(card), 1);
+      console.log(message);
     }) 
   }
 }

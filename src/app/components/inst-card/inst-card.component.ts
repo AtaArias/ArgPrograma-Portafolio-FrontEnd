@@ -15,6 +15,10 @@ export class InstCardComponent {
 
   @Output() deleteCard: EventEmitter<Card> = new EventEmitter;
 
+  @Output() saveEdits: EventEmitter<Card> = new EventEmitter;
+
+  editSelf: boolean  = false;
+
   constructor(){
     
   }
@@ -24,6 +28,14 @@ export class InstCardComponent {
     this.deleteCard.emit(this.card);
   }
 
+  editSelfToggle() {
+    this.editSelf = !this.editSelf;
+  }
+
+  clickedSave() {
+    this.saveEdits.emit(this.card);
+  }
+  
   // add a way for the card to delete itself
 
 

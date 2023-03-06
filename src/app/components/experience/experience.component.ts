@@ -23,12 +23,15 @@ export class ExperienceComponent {
     this.title = "Experience";
   }
 
-  ngOnInit(): void {
-    
-    //subscibre of observable waits
+  updateCards() {
     this.cardService.getExperienceCards().subscribe((cards)=> 
       this.cards = cards
     );
+  }
+
+  ngOnInit(): void {
+    
+    this.updateCards();
 
   }
 
@@ -44,9 +47,10 @@ export class ExperienceComponent {
   myAddCard = (title: string, iconUrl: string, content: string): void => {
     let myCard: Card = new Card({title: title, iconUrl: iconUrl, content: content});
     
-    this.addCardToggle();
-    this.cardService.addExperienceCard(myCard).subscribe((card) => {
-      this.cards.push(card);
+    this.cardService.addExperienceCard(myCard).subscribe((message) => {
+      console.log(message);
+      this.updateCards();
+      this.addCardToggle();
     });
   }
   

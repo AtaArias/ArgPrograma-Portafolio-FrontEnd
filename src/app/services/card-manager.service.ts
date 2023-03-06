@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':'application/json'
+    'Content-Type':'application/json',
+    'Response-Type':'text'
   })
 }
 
@@ -16,33 +17,33 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CardManagerService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { 
 
   }
 
   getExperienceCards(): Observable<Card[]> {
-    return this.http.get<Card[]>(this.apiUrl + 'experience');
+    return this.http.get<Card[]>(this.apiUrl + '/experience/traer');
   }
 
   getEducationCards(): Observable<Card[]> {
-    return this.http.get<Card[]>(this.apiUrl + 'education');
+    return this.http.get<Card[]>(this.apiUrl + '/education/traer');
   }
 
-  addExperienceCard(card: Card): Observable<Card> {
-    return this.http.post<Card>(this.apiUrl + 'experience', card, httpOptions);
+  addExperienceCard(card: Card): Observable<String> {
+    return this.http.post(this.apiUrl + '/experience/crear', card, {responseType: 'text'});
   }
 
-  addEducationCard(card: Card): Observable<Card> {
-    return this.http.post<Card>(this.apiUrl + 'education', card, httpOptions);
+  addEducationCard(card: Card): Observable<String> {
+    return this.http.post(this.apiUrl + '/education/crear', card, {responseType: 'text'});
   }
 
-  deleteExperienceCard(card: Card): Observable<Card> {
-    return this.http.delete<Card>(this.apiUrl + 'experience/' + card.id);
+  deleteExperienceCard(card: Card): Observable<String> {
+    return this.http.delete(this.apiUrl + '/experience/borrar/' + card.id, {responseType: 'text'});
   }
 
-  deleteEducationCard(card: Card): Observable<Card> {
-    return this.http.delete<Card>(this.apiUrl + 'education/' + card.id);
+  deleteEducationCard(card: Card): Observable<String> {
+    return this.http.delete(this.apiUrl + '/education/borrar/' + card.id, {responseType: 'text'});
   }
 }
