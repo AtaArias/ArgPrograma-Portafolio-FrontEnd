@@ -24,9 +24,13 @@ export class LogInPageComponent {
     this.passInput = this.logInForm.controls['password'];
   }
 
+  goHome() {
+    this.router.navigate(['/portofolio']);
+  }
+
   onSubmit(form: any): void {
     if(this.auth.login(form.user, form.password)) {
-      this.router.navigate(['/portofolio']);
+      this.goHome()
     }
   }
 }

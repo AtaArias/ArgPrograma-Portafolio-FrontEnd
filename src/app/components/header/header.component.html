@@ -5,15 +5,22 @@
         </a>
     </div>
 
-    <div>
+        <div class="flex sociales">
+            <a href="https://github.com/AtaArias" target="_blank">
+                <ng-icon name="bootstrapGithub"></ng-icon>
+            </a>
+
+            <a href="https://www.instagram.com/ata_arias09/" target="_blank">
+                <ng-icon name="bootstrapInstagram"></ng-icon>
+            </a> 
+        </div>
+
         <a routerLink="/logIn" *ngIf="!authService.logIn">
-        Redes sociales | Log in
+            <ng-icon name="bootstrapPerson"></ng-icon>
         </a>
 
-        <button *ngIf="authService.logIn" (click)="authService.logout()">
-            Log Out
-        </button>
-    </div>
+        <ng-icon name="bootstrapBoxArrowLeft" *ngIf="authService.logIn" (click)="authService.logout(); reloadPage()"> </ng-icon>
+
 </nav>
 
 <section class="banner">

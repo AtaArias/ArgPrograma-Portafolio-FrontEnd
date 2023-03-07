@@ -1,7 +1,10 @@
 <div class="border">
     <div class="flex">
         <h2> {{ title }} </h2>
-        <button *ngIf="editMode()" (click)="addCardToggle()" class="outline"> addCard </button>
+        <button *ngIf="editMode()" (click)="addCardToggle()" class="outline"> 
+            <ng-icon name="bootstrapPlus" *ngIf="!addCardForm"></ng-icon> 
+            <ng-icon name="bootstrapDash" *ngIf="addCardForm"></ng-icon>
+        </button>
     </div>
 
     <app-new-card-form *ngIf="addCardForm" [addCard]="myAddCard"></app-new-card-form>

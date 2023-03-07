@@ -1,4 +1,6 @@
+import { isNgContainer } from '@angular/compiler';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
 import { Card } from './inst-card.model';
@@ -18,9 +20,19 @@ export class InstCardComponent {
   @Output() saveEdits: EventEmitter<Card> = new EventEmitter;
 
   editSelf: boolean  = false;
+  
+  editForm: FormGroup;
 
-  constructor(){
+  constructor(private fb: FormBuilder){
     
+  }
+
+  ngOnInit() {
+    this.editForm = this.fb.group({
+      'title': [this.card.title, Validators.required],
+      'iconUrl': [this.card.iconUrl, Validators.required],
+      'content': [this.card.content]
+    })
   }
 
   clickedDelete(){
@@ -30,6 +42,8 @@ export class InstCardComponent {
 
   editSelfToggle() {
     this.editSelf = !this.editSelf;
+
+    this.editForm.setValue({title: this.card.title, iconUrl: this.card.iconUrl, content: this.card.content});
   }
 
   clickedSave() {

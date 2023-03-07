@@ -8,19 +8,31 @@
                 {{ card.title }}
             </h3>
             <div class="flex" *ngIf="edit">
-                <button (click)="editSelfToggle()"> edit </button>
-                <button (click)="clickedDelete()"> delete </button>
+                <button (click)="editSelfToggle()"> 
+                    <ng-icon name="bootstrapPencil"></ng-icon>
+                </button>
+                <button (click)="clickedDelete()"> 
+                    <ng-icon name="bootstrapTrash"></ng-icon>
+                </button>
             </div>
         </div>
         <p> {{ card.content }}</p>
     </div>
 </div>
 
-<form *ngIf="editSelf">
+<form *ngIf="editSelf"
+    [formGroup]="editForm"    
+>
     <div class="card-item">
         <div>
+            <img src="{{card.iconUrl}}" alt="">
             <label for="iconUrl"> <h3> Icon Url </h3> </label>
-            <textarea name="iconUrl" placeholder="Aditional details" value="{{card.iconUrl}}"> </textarea>
+            <input 
+                type="text"
+                name="iconUrl"  
+                placeholder="Url del ícono"
+                formControlName="iconUrl"
+            >
         </div>
 
         <div>
@@ -29,16 +41,27 @@
                     <label for="title"> <h3> Title </h3>  </label>
 
                     <div class="flex">
-                        <button (click)="clickedSave()"> Save </button>
-                        <button (click)="editSelfToggle()"> Cancel </button>
+                        <ng-icon name="bootstrapSave" (click)="clickedSave()"></ng-icon>
+                        
+                        <ng-icon name="bootstrapX" (click)="editSelfToggle()"></ng-icon>
                     </div>
                 </div>
-                <input type="text" name="title" value="{{card.title}}">
+                <input 
+                    type="text" 
+                    name="title"
+                    placeholder="Título"
+                    formControlName="title"
+                >
             </div>
 
             <div>
                 <label for="content"> Contenido </label>
-                <textarea name="content" placeholder="Contenido" value="{{card.content}}"> </textarea>
+                <textarea 
+                    name="content" 
+                    placeholder="Contenido"
+                    formControlName="content"
+                > 
+                </textarea>
             </div>
         </div>
     </div>
