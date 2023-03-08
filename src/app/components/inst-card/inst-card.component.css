@@ -23,3 +23,17 @@ button:hover, button:focus {
     color: black;
     border: 1px solid #11c0ff;
 }
+
+.buttons {
+    gap: 10px;
+}
+
+.buttons ng-icon {
+    font-size: 1.2em;
+    transition: 0.2s;
+}
+
+.buttons ng-icon:hover{
+    color: crimson;
+    scale: 1.5;
+}

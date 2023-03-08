@@ -47,7 +47,17 @@ export class InstCardComponent {
   }
 
   clickedSave() {
+    this.card.title = this.editForm.controls['title'].value;
+
+    this.card.iconUrl = this.editForm.controls['iconUrl'].value;
+
+    this.card.content = this.editForm.controls['content'].value;
+
     this.saveEdits.emit(this.card);
+
+    console.log("save click");
+
+    this.editSelfToggle();
   }
   
   // add a way for the card to delete itself

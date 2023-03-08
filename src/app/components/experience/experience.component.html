@@ -12,6 +12,7 @@
     <app-inst-card *ngFor="let fooCard of cards"
         [edit]="editMode()"
         [card]="fooCard"
-        (deleteCard)="removeCard($event)">
+        (deleteCard)="removeCard($event)"
+        (saveEdits)="saveCard($event)">
     </app-inst-card>
 </div>

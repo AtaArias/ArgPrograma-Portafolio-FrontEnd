@@ -46,4 +46,8 @@ export class CardManagerService {
   deleteEducationCard(card: Card): Observable<String> {
     return this.http.delete(this.apiUrl + '/education/borrar/' + card.id, {responseType: 'text'});
   }
+
+  saveExperienceCard(card: Card): Observable<Card> {
+    return this.http.put<Card>(this.apiUrl + '/experience/editar/' + card.id, card);
+  }
 }

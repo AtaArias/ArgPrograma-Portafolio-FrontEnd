@@ -7,13 +7,10 @@
             <h3>
                 {{ card.title }}
             </h3>
-            <div class="flex" *ngIf="edit">
-                <button (click)="editSelfToggle()"> 
-                    <ng-icon name="bootstrapPencil"></ng-icon>
-                </button>
-                <button (click)="clickedDelete()"> 
-                    <ng-icon name="bootstrapTrash"></ng-icon>
-                </button>
+            <div class="flex buttons" *ngIf="edit">
+                <ng-icon name="bootstrapPencil" (click)="editSelfToggle()"></ng-icon>
+            
+                <ng-icon name="bootstrapTrash" (click)="clickedDelete()"></ng-icon>
             </div>
         </div>
         <p> {{ card.content }}</p>
@@ -37,10 +34,10 @@
 
         <div>
             <div>
-                <div class="flex">
+                <div class="flex top-bar">
                     <label for="title"> <h3> Title </h3>  </label>
 
-                    <div class="flex">
+                    <div class="flex buttons">
                         <ng-icon name="bootstrapSave" (click)="clickedSave()"></ng-icon>
                         
                         <ng-icon name="bootstrapX" (click)="editSelfToggle()"></ng-icon>

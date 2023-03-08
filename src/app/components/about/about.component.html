@@ -1,14 +1,65 @@
 <section class="about">
     <div class="info">
         <div class="icon">
-            <img src="{{ iconUrl }}">
-            <p>{{ iconDescription }} </p>
+            <div class="relative">
+                <img src="{{ about.iconUrl }}">
+                <div class="editIcon" *ngIf="editable" (click)="toggleEdit.iconUrl()">
+                    <ng-icon name="bootstrapPencil"></ng-icon>
+                </div>
+            </div>
+
+            <form *ngIf="about.iconUrlEdit">
+                <label> <h3> Icon url </h3> </label>
+                <input type="text" value="{{about.iconUrl}}">
+            </form>
+            
+            <div class="flex" *ngIf="!about.iconDescriptionEdit">
+                <p> {{ about.iconDescription }} </p>
+                <ng-icon name="bootstrapPencil" class="little-pen" *ngIf="editable" (click)="toggleEdit.iconDescription()"></ng-icon>
+            </div>
+
+            <form *ngIf="about.iconDescriptionEdit">
+                <div class="flex">
+                    <label> <h4> Description </h4> </label> 
+                    <ng-icon name="bootstrapPencil" class="little-pen" (click)="toggleEdit.iconDescription()"></ng-icon>
+                </div>
+                <input type="text" value="{{about.iconDescription}}">
+            </form>
         </div>
     </div>
     
-    <div>
-        <h2> {{ title }} </h2>
-        <p> {{ aboutContent }} </p>
+    <div class="main">
+        <div class="flex" *ngIf="!about.titleEdit">
+            <h2> {{ about.title }} </h2>
+            <ng-icon name="bootstrapPencil" class="little-pen" *ngIf="editable" (click)="toggleEdit.title()"></ng-icon>
+        </div>
+
+        <div>
+            <form *ngIf="about.titleEdit">
+                <div class="flex">
+                    <label> <h2> Title </h2> </label> 
+                    <ng-icon name="bootstrapPencil" class="little-pen" (click)="toggleEdit.title()"></ng-icon>
+                </div>
+                <input type="text" value="{{about.title}}">
+            </form>
+        </div>
+
+        <div class="flex" *ngIf="!about.contentEdit">
+            <p> {{ about.content }} </p>
+            <ng-icon name="bootstrapPencil" class="little-pen" *ngIf="editable" (click)="toggleEdit.content()"></ng-icon>
+        </div>
+
+
+        <div>
+            <form *ngIf="about.contentEdit">
+                <div class="flex">
+                    <label> <h4> Content </h4> </label> 
+                    <ng-icon name="bootstrapPencil" class="little-pen" (click)="toggleEdit.content()"></ng-icon>
+                </div>
+
+                <textarea value="{{about.content}}"></textarea>
+            </form>
+        </div>
     </div>
 
 </section>

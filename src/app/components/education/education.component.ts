@@ -54,4 +54,8 @@ export class EducationComponent {
       console.log(message);
     }) 
   }
+
+  saveCard(card: Card){
+    this.cardManager.addEducationCard(card).subscribe((mssg) => console.log(mssg));
+  }
 }

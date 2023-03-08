@@ -59,4 +59,8 @@ export class ExperienceComponent {
       this.cards.splice(this.cards.indexOf(card),1);
     })
   }
+
+  saveCard(card: Card){
+    this.cardService.addExperienceCard(card).subscribe((resp) => console.log(resp));
+  }
 }
