@@ -12,8 +12,8 @@
 
 p {
     margin-bottom: 0;
+    white-space: pre-wrap;
 }
-
 
 .icon {
     padding: 10%;
@@ -27,7 +27,6 @@ p {
 .icon h3, .icon h4 {
     margin-bottom: 0;
 }
-
 
 .about{
     padding: 30px 15px;
@@ -58,6 +57,7 @@ div.editIcon {
 div.editIcon:hover {
     backdrop-filter: blur(2px);
     font-size: 3em;
+    cursor: pointer;
 }
 
 .relative {
@@ -81,4 +81,22 @@ form {
 
 .main {
     width: 100%;
+}
+
+.submit-button {
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+}
+
+
+ng-icon {
+    font-size: 1.2em;
+    transition: 0.2s;
+}
+
+ng-icon:hover{
+    color: crimson;
+    scale: 1.5;
+    cursor: pointer;
 }

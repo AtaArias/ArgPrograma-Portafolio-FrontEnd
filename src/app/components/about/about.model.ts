@@ -1,27 +1,15 @@
 export class About {
-    title: string;
-    content: string;
-    iconUrl: string;
-    iconDescription: string;
+    title: string = "About me";
+    content: string = "Info about me";
+    iconUrl: string = "";
+    iconDescription: string = "icon description";
 
     titleEdit: boolean = false;
     contentEdit: boolean = false;
     iconUrlEdit: boolean = false;
     iconDescriptionEdit: boolean = false;
 
-    constructor(obj: {
-        title?:string, 
-        content?: string, 
-        iconUrl?: string, 
-        iconDescription?: string,
-        }
-        ){
-
-        this.title = obj.title || "About me";
-        this.content = obj.content || "Info about me";
-        this.iconUrl = obj.iconUrl || "";
-        this.iconDescription = obj.iconDescription || "icon description";   
+    constructor(obj: Partial<About>){
+        Object.assign(this, obj)
     }
-
-    
 }

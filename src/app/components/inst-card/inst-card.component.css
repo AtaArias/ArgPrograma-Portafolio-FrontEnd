@@ -37,3 +37,7 @@ button:hover, button:focus {
     color: crimson;
     scale: 1.5;
 }
+
+p {
+    white-space: pre-wrap;
+}

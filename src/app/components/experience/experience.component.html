@@ -1,4 +1,4 @@
-<div class="border">
+<div class="border" *ngIf="cards.length > 0 || editMode()">
     <div class="flex">
         <h2> {{ title }} </h2>
         <button *ngIf="editMode()" (click)="addCardToggle()" class="outline"> 

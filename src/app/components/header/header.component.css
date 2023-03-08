@@ -31,6 +31,7 @@ ng-icon {
 
 ng-icon:hover {
     color: white;
+    cursor: pointer;
 }
 
 a {
