@@ -31,6 +31,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { NewCardFormComponent } from './components/new-card-form/new-card-form.component';
 import { LogInPageComponent } from './components/log-in-page/log-in-page.component';
 import { PortofolioComponent } from './components/portofolio/portofolio.component';
+import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { PortofolioComponent } from './components/portofolio/portofolio.componen
     SkillsComponent,
     NewCardFormComponent,
     LogInPageComponent,
-    PortofolioComponent
+    PortofolioComponent,
+    SkillItemComponent
   ],
   imports: [
     BrowserModule,
