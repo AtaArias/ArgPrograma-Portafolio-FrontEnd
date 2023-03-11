@@ -1,23 +1,27 @@
-.slider-border {
-    z-index: 2;
+.skill-card {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 20px;
+}
+
+.skill-card .percentage {
+    opacity: 0;
+    transition: opacity .2s, scale .5s ease-in-out;
+}
+
+.skill-card .spinner:hover .percentage {
+    opacity: 1;
+    scale: 1.5;
+}
+
+.skill-card .spinner {
     position: relative;
-    height: 2em;
-    width: 80%;
-
-    border: 1px solid black;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.slider {
-    z-index: -1;
+.skill-card .spinner .percentage {
     position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(270deg, #ccbe96e0, rgb(100, 224, 42));
-    height: 100%;
-    transition: 1s;
-}
-
-.slider-border:not(:hover) .slider{
-    width: 0% !important;
 }

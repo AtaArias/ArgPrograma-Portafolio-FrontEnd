@@ -1,0 +1,9 @@
+<div class="grid">
+
+    <app-skill-item
+        *ngFor="let foo of skills"
+        [skill]="foo"
+        (delete)="deleteSkill($event)"
+    ></app-skill-item>
+    
+</div>

@@ -20,6 +20,10 @@ import { bootstrapPerson } from '@ng-icons/bootstrap-icons';
 import { bootstrapArrow90degLeft } from '@ng-icons/bootstrap-icons';
 import { bootstrapBoxArrowLeft } from '@ng-icons/bootstrap-icons';
 
+// angular material
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -32,6 +36,7 @@ import { NewCardFormComponent } from './components/new-card-form/new-card-form.c
 import { LogInPageComponent } from './components/log-in-page/log-in-page.component';
 import { PortofolioComponent } from './components/portofolio/portofolio.component';
 import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
+import { SkillListComponent } from './components/skills/skill-list/skill-list.component';
 
 
 @NgModule({
@@ -46,7 +51,8 @@ import { SkillItemComponent } from './components/skills/skill-item/skill-item.co
     NewCardFormComponent,
     LogInPageComponent,
     PortofolioComponent,
-    SkillItemComponent
+    SkillItemComponent,
+    SkillListComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +60,8 @@ import { SkillItemComponent } from './components/skills/skill-item/skill-item.co
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
     NgIconsModule.withIcons({
       bootstrapPencil,
       bootstrapTrash,
@@ -67,6 +75,9 @@ import { SkillItemComponent } from './components/skills/skill-item/skill-item.co
       bootstrapArrow90degLeft,
       bootstrapBoxArrowLeft
     }),
+  ],
+  exports: [
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

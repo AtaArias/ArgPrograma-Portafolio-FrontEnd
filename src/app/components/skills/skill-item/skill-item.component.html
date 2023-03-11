@@ -1,7 +1,25 @@
-<div class="slider-border">
-    <h3> {{ skill.name }}</h3>
+<mat-card class="skill-card">
+    <mat-card-title>
+        {{ skill.name }} 
+    </mat-card-title>
 
-    <div class="slider" [style.width]="skill.percentage + '%'">
-        
+    <div class="spinner">
+        <mat-progress-spinner
+            [mode]='mode'
+            [value]="skill.percentage"
+            [color]="color"
+        >
+        </mat-progress-spinner>
+
+        <div class="percentage">
+            <h3> {{ skill.percentage + "%"}} </h3>
+        </div>
     </div>
-</div>
+    
+    <mat-card-actions *ngIf="editable">
+        <ng-icon name="bootstrapPencil"></ng-icon>
+        <ng-icon name="bootstrapTrash"
+            (click)="deleteSelf()"
+        ></ng-icon>
+    </mat-card-actions>
+</mat-card>
