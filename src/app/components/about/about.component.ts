@@ -10,7 +10,7 @@ import { About } from './about.model';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  about: About;
+  about: About = new About({});
 
   editable: boolean = true;
 

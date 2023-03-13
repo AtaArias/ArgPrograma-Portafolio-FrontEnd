@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SkillService } from 'src/app/services/skill.service';
 import { Skill } from './skill-item/skill-item.model';
 
 @Component({
@@ -10,26 +11,16 @@ export class SkillsComponent {
 
   title: string;
 
-  hardSkills: Skill[] = [
-    new Skill({
-      name: "Lua",
-      percentage: 80
-    }),
-    new Skill({
-      name: "Python",
-      percentage: 20
-    }),
-    new Skill({
-      name: "R",
-      percentage: 40
-    }),
-    new Skill({
-      name: "SQL",
-      percentage: 50
-    })
-  ]
+  hardSkills: Skill[];
 
-  constructor() {
+  constructor(private skillService: SkillService) {
     this.title = "Skills";
+  }
+
+  ngOnInit() {
+    this.skillService.getSkills('hard').subscribe(
+      (skills) => {
+        this.hardSkills = skills;
+      })
   }
 }

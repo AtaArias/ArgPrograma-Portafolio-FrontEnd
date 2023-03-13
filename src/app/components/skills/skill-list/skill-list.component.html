@@ -1,9 +1,46 @@
-<div class="grid">
+<button (click)="skillFormToggle()">
+    <ng-icon 
+        *ngIf="!skillForm"
+        name="bootstrapPlus"
+    ></ng-icon>
 
+    <ng-icon
+        *ngIf="skillForm"
+        name="bootstrapDash"
+    >
+    </ng-icon>
+</button>
+
+<form 
+    *ngIf="skillForm"
+    #f="ngForm"
+    (ngSubmit)="addSkill(); skillFormToggle()"
+>
+    <div class="row">
+        <div class="col-1">
+            <label > Name </label>
+            <input 
+                type="text"
+                [formControl]="nameControl"
+            >
+        </div>
+
+        <div class="col-1">
+            <label> Percentage </label>
+            <input 
+                type="number"
+                [formControl]="percentageControl"
+            >
+        </div>
+    </div>
+
+    <button type="submit"> Agregar </button>
+</form>
+
+<div class="grid">
     <app-skill-item
         *ngFor="let foo of skills"
         [skill]="foo"
         (delete)="deleteSkill($event)"
     ></app-skill-item>
-    
 </div>

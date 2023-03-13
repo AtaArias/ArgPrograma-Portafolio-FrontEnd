@@ -1,7 +1,7 @@
 export class About {
     title: string = "About me";
     content: string = "Info about me";
-    iconUrl: string = "";
+    iconUrl: string = "url";
     iconDescription: string = "icon description";
 
     titleEdit: boolean = false;

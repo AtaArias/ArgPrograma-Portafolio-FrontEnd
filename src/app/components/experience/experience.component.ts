@@ -16,7 +16,7 @@ export class ExperienceComponent {
   
   addCardForm: boolean = false;
 
-  cards: Card[];
+  cards: Card[] = [];
 
 
   constructor(private cardService: CardManagerService, private authService: AuthService) {
