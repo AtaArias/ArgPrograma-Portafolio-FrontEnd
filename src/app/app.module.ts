@@ -15,6 +15,7 @@ import { bootstrapX } from '@ng-icons/bootstrap-icons';
 // social
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
 import { bootstrapInstagram } from '@ng-icons/bootstrap-icons';
+import { bootstrapLink45deg } from '@ng-icons/bootstrap-icons';
 // log
 import { bootstrapPerson } from '@ng-icons/bootstrap-icons';
 import { bootstrapArrow90degLeft } from '@ng-icons/bootstrap-icons';
@@ -23,6 +24,7 @@ import { bootstrapBoxArrowLeft } from '@ng-icons/bootstrap-icons';
 // angular material
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -67,6 +69,7 @@ import { ProjectItemComponent } from './components/projects/project-item/project
     AppRoutingModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatDividerModule,
     NgIconsModule.withIcons({
       bootstrapPencil,
       bootstrapTrash,
@@ -76,6 +79,7 @@ import { ProjectItemComponent } from './components/projects/project-item/project
       bootstrapSave,
       bootstrapGithub,
       bootstrapInstagram,
+      bootstrapLink45deg,
       bootstrapPerson,
       bootstrapArrow90degLeft,
       bootstrapBoxArrowLeft
