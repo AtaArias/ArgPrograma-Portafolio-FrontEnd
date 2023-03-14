@@ -16,4 +16,11 @@ export class SkillService {
     return this.http.get<Skill[]>(this.urlApi + "traer/" + tipo);
   }
 
+  addSkill(skill: Skill): Observable<String> {
+    return this.http.post(this.urlApi + "crear", skill, {responseType: 'text'});
+  }
+
+  deleteSkill(skill: Skill): Observable<String> {
+    return this.http.delete(this.urlApi + "borrar/" + skill.id, {responseType: 'text'});
+  }
 }

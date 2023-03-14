@@ -38,6 +38,8 @@ import { LogInPageComponent } from './components/log-in-page/log-in-page.compone
 import { PortofolioComponent } from './components/portofolio/portofolio.component';
 import { SkillItemComponent } from './components/skills/skill-item/skill-item.component';
 import { SkillListComponent } from './components/skills/skill-list/skill-list.component';
+import { ProjectsComponent } from './components/projects/projects/projects.component';
+import { ProjectItemComponent } from './components/projects/project-item/project-item.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { SkillListComponent } from './components/skills/skill-list/skill-list.co
     LogInPageComponent,
     PortofolioComponent,
     SkillItemComponent,
-    SkillListComponent
+    SkillListComponent,
+    ProjectsComponent,
+    ProjectItemComponent
   ],
   imports: [
     BrowserModule,

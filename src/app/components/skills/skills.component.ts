@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { SkillService } from 'src/app/services/skill.service';
 import { Skill } from './skill-item/skill-item.model';
 
@@ -9,12 +10,17 @@ import { Skill } from './skill-item/skill-item.model';
 })
 export class SkillsComponent {
 
+  edit: boolean = false;
+
   title: string;
 
   hardSkills: Skill[];
+  softSkills: Skill[];
 
-  constructor(private skillService: SkillService) {
+  constructor(private skillService: SkillService, private authService: AuthService) {
     this.title = "Skills";
+    
+    this.edit = this.authService.logIn;
   }
 
   ngOnInit() {
@@ -22,5 +28,11 @@ export class SkillsComponent {
       (skills) => {
         this.hardSkills = skills;
       })
+
+    this.skillService.getSkills('soft').subscribe(
+      (skills) => {
+        this.softSkills = skills;
+      }
+    )
   }
 }

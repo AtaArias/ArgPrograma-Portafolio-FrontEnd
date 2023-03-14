@@ -1,4 +1,6 @@
-<button (click)="skillFormToggle()">
+<button 
+    *ngIf="editable"
+    (click)="skillFormToggle()">
     <ng-icon 
         *ngIf="!skillForm"
         name="bootstrapPlus"
@@ -12,7 +14,7 @@
 </button>
 
 <form 
-    *ngIf="skillForm"
+    *ngIf="skillForm && editable"
     #f="ngForm"
     (ngSubmit)="addSkill(); skillFormToggle()"
 >
@@ -42,5 +44,8 @@
         *ngFor="let foo of skills"
         [skill]="foo"
         (delete)="deleteSkill($event)"
+        [style.width.%]="90"
+        [style.height.%]="100"
+        [editable]="editable"
     ></app-skill-item>
 </div>

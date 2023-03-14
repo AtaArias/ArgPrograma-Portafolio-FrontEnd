@@ -1,7 +1,7 @@
 .skill-card {
     display: flex;
     align-items: center;
-    width: fit-content;
+    width: 100%;
     padding: 20px;
 }
 
@@ -24,4 +24,8 @@
 
 .skill-card .spinner .percentage {
     position: absolute;
+}
+
+mat-card-title {
+    text-align: center;
 }

@@ -11,10 +11,10 @@ import { Skill } from './skill-item.model';
 })
 export class SkillItemComponent {
   @Input() skill: Skill;
+
+  @Input() editable: boolean = false;
   
   @Output() delete: EventEmitter<Skill> = new EventEmitter;
-
-  editable: boolean = true;
 
   mode: ProgressSpinnerMode = "determinate";
 

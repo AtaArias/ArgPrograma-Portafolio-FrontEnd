@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { SkillService } from 'src/app/services/skill.service';
 import { Skill } from '../skill-item/skill-item.model';
 
 @Component({
@@ -11,15 +12,17 @@ export class SkillListComponent {
 
   @Input() skills: Array<Skill> = [];
 
-  skillForm: boolean = false;
+  @Input() editable: boolean = false;
 
-  @Input() listType: string = "hard";
+  @Input() listType: string = "";
+
+  skillForm: boolean = false;
 
   nameControl = new FormControl('Habilidad');
 
   percentageControl = new FormControl(50);
 
-  constructor() {
+  constructor(private skillService: SkillService) {
     
   }
 
@@ -28,14 +31,30 @@ export class SkillListComponent {
   }
 
   deleteSkill(skill: Skill) {
-    this.skills.splice(this.skills.indexOf(skill), 1);
+    this.skillService.deleteSkill(skill).subscribe(
+      (mssg) => {
+        console.log(mssg);
+
+        this.skills.splice(this.skills.indexOf(skill), 1);
+      }
+    )
   }
 
   addSkill() {
-    this.skills.push(new Skill({
+    let newSkill: Skill = new Skill({
       name: this.nameControl.value || "",
       percentage: this.percentageControl.value || 50,
-      type: this.listType
-    }));
+      type: this.listType})
+
+    this.skillService.addSkill(newSkill).subscribe(
+      (mssg) => {
+        if(mssg == "Skill guardada") {
+          this.skills.push(newSkill);
+        }
+
+        console.log(mssg);
+      }
+    )
+    
   }
 }
