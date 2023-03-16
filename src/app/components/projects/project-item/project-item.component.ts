@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Project } from './project-item.model';
+
 
 @Component({
   selector: 'app-project-item',
@@ -8,4 +9,11 @@ import { Project } from './project-item.model';
 })
 export class ProjectItemComponent {
   @Input() project: Project = new Project({});
+
+  @Output() update: EventEmitter<Project> = new EventEmitter<Project>;
+
+  updateSelf() {
+    this.update.emit(this.project);
+  }
+
 }

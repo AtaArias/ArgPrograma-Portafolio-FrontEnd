@@ -1,1 +1,10 @@
-<app-project-item></app-project-item>
+<app-add-project-form
+    (projectAdder)="addProject($event)"
+>
+</app-add-project-form>
+
+<app-project-item 
+    *ngFor="let proj of projects"
+    [project]="proj"
+    (update)="updateCard($event)"
+></app-project-item>

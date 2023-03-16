@@ -1,0 +1,44 @@
+<form [formGroup]="myForm"
+    (ngSubmit)="addProject()"
+> 
+    <div class="row">
+        <div class="col-1">
+            <label> Nombre del proyecto </label>
+            <input 
+                type="text"
+                formControlName="name" 
+            >
+
+            <label> Fecha del projecto </label>
+            <input 
+                type="date"
+                formControlName="date"
+            >
+
+            <br>
+
+            <label> URL proyecto </label>
+            <input 
+                type="text"
+                formControlName="sourceUrl"
+            >
+
+            <label> URL de la imagen </label>
+            <input 
+                type="text"
+                formControlName="imageUrl"    
+            >
+        </div>
+
+        <div class="col-3">
+
+            <label> Descripción del proyecto </label>
+            <textarea 
+                type="text"
+                formControlName="description"
+            > </textarea>
+        </div>
+    </div>
+
+    <button type="submit"></button>
+</form>  
