@@ -19,11 +19,11 @@ export class ProjectsComponent {
 
   addProject(proj: Project) {
     console.log(proj);
-    this.projectService.addProject(Project);
+    this.projectService.addProject(proj);
     this.projects.push(proj);
   }
 
   updateCard(proj: Project){
-    this.projectService.addProject(Project);
+    this.projectService.addProject(proj);
   }
 }
