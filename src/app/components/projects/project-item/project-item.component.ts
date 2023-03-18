@@ -12,6 +12,10 @@ export class ProjectItemComponent {
 
   @Output() update: EventEmitter<Project> = new EventEmitter<Project>;
 
+  @Input() edit: boolean = false;
+
+  editSelf: boolean = false;
+
   updateSelf() {
     this.update.emit(this.project);
   }

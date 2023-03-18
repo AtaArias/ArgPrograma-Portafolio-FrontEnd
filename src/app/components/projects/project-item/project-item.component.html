@@ -1,5 +1,14 @@
 <div class="wrapper"> 
-    <mat-card>
+    <ng-icon
+        class="toggle-edit"
+        *ngIf="edit" 
+        [name]="!editSelf ? 'bootstrapPencil' : 'bootstrapDash'"
+        (click)="editSelf=!editSelf"
+    >
+
+    </ng-icon>
+
+    <mat-card *ngIf="!editSelf">
         <div class="row">
             <div class="col-2">
                 <mat-card-title-group>
@@ -37,9 +46,11 @@
         
     </mat-card>
 
-    <app-add-project-form
-        [defaultProj]="project"
-        (projectAdder)="updateSelf()"
-    >
-    </app-add-project-form>
+    <mat-card *ngIf="edit && editSelf">
+        <app-add-project-form
+            [defaultProj]="project"
+            (projectAdder)="updateSelf()"
+        >
+        </app-add-project-form>
+    </mat-card>
 </div>

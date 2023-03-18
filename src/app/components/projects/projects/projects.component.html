@@ -7,4 +7,5 @@
     *ngFor="let proj of projects"
     [project]="proj"
     (update)="updateCard($event)"
+    [edit]="logged"
 ></app-project-item>

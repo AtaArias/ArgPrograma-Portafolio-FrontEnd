@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Project } from '../components/projects/project-item/project-item.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  projects: Project[] = [];
+  apiUrl: String = "http://localhost:8080/project/"
 
-  constructor() {
-    this.projects.push(new Project({name: "Colorblind filter", chips: ['Lua', 'Love2d', 'Utility']}));
-    this.projects.push(new Project({name: "Java script"}));
+  constructor(private http: HttpClient) {
    }
 
-  getProjects(): Project[]{
-    return this.projects;
+  getProjects(): Observable<Project[]>{
+    return this.http.get<Project[]>(this.apiUrl + "traer");
   }
 
-  addProject(proj: Project) {
-    this.projects.push(proj);
+  addProject(proj: Project): Observable<String> {
+    return this.http.post(this.apiUrl + "crear", proj, {responseType:'text'});
+  }
+
+  deleteProject(proj: Project): Observable<String> {
+    return this.http.delete(this.apiUrl + "delete/" + proj.id, {responseType:'text'});
   }
 }
