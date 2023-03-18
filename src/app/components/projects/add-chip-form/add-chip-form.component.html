@@ -1,0 +1,14 @@
+<form>
+    <label> <h3> Chip Name </h3> </label>
+
+    <ng-icon 
+        name="bootstrapPlus"
+        (click)="onSubmit()"    
+    ></ng-icon>
+    
+    <input
+        type="text"
+        name="chipName"
+        [formControl]="nameField"
+    >
+</form>

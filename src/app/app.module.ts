@@ -43,6 +43,7 @@ import { SkillListComponent } from './components/skills/skill-list/skill-list.co
 import { ProjectsComponent } from './components/projects/projects/projects.component';
 import { ProjectItemComponent } from './components/projects/project-item/project-item.component';
 import { AddProjectFormComponent } from './components/projects/add-project-form/add-project-form.component';
+import { AddChipFormComponent } from './components/projects/add-chip-form/add-chip-form.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { AddProjectFormComponent } from './components/projects/add-project-form/
     SkillListComponent,
     ProjectsComponent,
     ProjectItemComponent,
-    AddProjectFormComponent
+    AddProjectFormComponent,
+    AddChipFormComponent
   ],
   imports: [
     BrowserModule,

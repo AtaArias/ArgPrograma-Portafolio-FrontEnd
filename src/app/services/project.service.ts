@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Project } from '../components/projects/project-item/project-item.model';
 import { HttpClient } from '@angular/common/http';
+import { Chip } from '../components/projects/chip.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,13 @@ export class ProjectService {
 
   deleteProject(proj: Project): Observable<String> {
     return this.http.delete(this.apiUrl + "delete/" + proj.id, {responseType:'text'});
+  }
+
+  getChips(proj: Project): Observable<Chip[]> {
+    return this.http.get<Chip[]>(this.apiUrl + "chips/" + proj.id);
+  }
+
+  deleteChip(chip: Chip): Observable<String> {
+    return this.http.delete(this.apiUrl + "delete/chip/" + chip.id, {responseType:'text'});
   }
 }

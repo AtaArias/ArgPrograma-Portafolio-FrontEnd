@@ -1,11 +1,16 @@
-<app-add-project-form
-    (projectAdder)="addProject($event)"
->
-</app-add-project-form>
+<div class="border">
+    <h2> Projectos </h2>
 
-<app-project-item 
-    *ngFor="let proj of projects"
-    [project]="proj"
-    (update)="updateCard($event)"
-    [edit]="logged"
-></app-project-item>
+    <app-add-project-form
+        *ngIf="logged"
+        (projectAdder)="addProject($event)"
+    >
+    </app-add-project-form>
+
+    <app-project-item 
+        *ngFor="let proj of projects"
+        [project]="proj"
+        (update)="updateCard($event)"
+        [edit]="logged"
+    ></app-project-item>
+</div>

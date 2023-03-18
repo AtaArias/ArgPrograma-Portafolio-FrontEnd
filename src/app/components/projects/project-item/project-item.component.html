@@ -1,12 +1,19 @@
 <div class="wrapper"> 
-    <ng-icon
-        class="toggle-edit"
-        *ngIf="edit" 
-        [name]="!editSelf ? 'bootstrapPencil' : 'bootstrapDash'"
-        (click)="editSelf=!editSelf"
-    >
+    
+    <div class="editButtons" *ngIf="edit" >
+        <ng-icon
+            class="toggle-edit"
+            [name]="!editSelf ? 'bootstrapPencil' : 'bootstrapDash'"
+            (click)="editSelf=!editSelf"
+        >
+        </ng-icon>
 
-    </ng-icon>
+        <ng-icon
+            name="bootstrapTrash"
+            (click)="deleteProject()"
+        ></ng-icon>
+    </div>
+
 
     <mat-card *ngIf="!editSelf">
         <div class="row">
@@ -41,7 +48,7 @@
 
             <div class="chip"
                 *ngFor="let ch of project.chips"
-            > {{ch}} </div>
+            > {{ch.name}} </div>
         </mat-card-footer>
         
     </mat-card>
@@ -52,5 +59,22 @@
             (projectAdder)="updateSelf()"
         >
         </app-add-project-form>
+
+
+        <mat-card-footer>
+
+            <mat-divider> </mat-divider>
+
+            <div class="chip deletable"
+                *ngFor="let ch of project.chips"
+                (click)="deleteChip(ch)"
+            > {{ch.name}} </div>
+
+
+        <app-add-chip-form
+            (addChip)="addChip($event)"
+        >
+        </app-add-chip-form>
+        </mat-card-footer>
     </mat-card>
 </div>

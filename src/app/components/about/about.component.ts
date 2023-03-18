@@ -28,10 +28,10 @@ export class AboutComponent {
     "iconDescription": (data: string) => {this.about.iconDescription = data}
   }
 
-  titleField: FormControl;
-  contentField: FormControl;
-  iconUrlField: FormControl;
-  iconDescField: FormControl;
+  titleField: FormControl = new FormControl();
+  contentField: FormControl = new FormControl();
+  iconUrlField: FormControl = new FormControl();
+  iconDescField: FormControl = new FormControl();
 
   constructor(private authService: AuthService, private aboutService: AboutService) {
 
@@ -44,10 +44,10 @@ export class AboutComponent {
       (about) => {
         this.about = about;
 
-        this.titleField = new FormControl(this.about.title);
-        this.contentField = new FormControl(this.about.content);
-        this.iconUrlField = new FormControl(this.about.iconUrl);
-        this.iconDescField = new FormControl(this.about.iconDescription);
+        this.titleField.setValue(this.about.title);
+        this.contentField.setValue(this.about.content);
+        this.iconUrlField.setValue(this.about.iconUrl);
+        this.iconDescField.setValue(this.about.iconDescription);
       })
   }
 
