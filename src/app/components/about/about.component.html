@@ -14,10 +14,15 @@
                 </div>
             </div>
 
-            <form *ngIf="about.iconUrlEdit" #f="ngForm"
-                (ngSubmit)="update.iconUrl(iconUrlField.value); toggleEdit.iconUrl()"
+            <form *ngIf="about.iconUrlEdit"
+                (ngSubmit)="toggleEdit.iconUrl()"
             >
-                <input type="text" [formControl]="iconUrlField">
+                <input 
+                    type="text" 
+                    value="{{about.iconUrl}}"
+                    [(ngModel)]="about.iconUrl"
+                    name="iconUrl"
+                >
             </form>
             
             <div class="flex" *ngIf="!about.iconDescriptionEdit">
@@ -25,19 +30,23 @@
                 <ng-icon name="bootstrapPencil" class="little-pen" *ngIf="editable" (click)="toggleEdit.iconDescription()"></ng-icon>
             </div>
 
-            <form #f="ngForm" *ngIf="about.iconDescriptionEdit"
-                (ngSubmit)="update.iconDescription(iconDescField.value); toggleEdit.iconDescription()"
+            <form *ngIf="about.iconDescriptionEdit"
             >
                 <div class="flex">
                     <label> <h4> Description </h4> </label> 
                     <ng-icon 
                         name="bootstrapPencil" 
                         class="little-pen" 
-                        (click)="toggleEdit.iconDescription(); update.iconDescription(iconDescField.value)">
+                        (click)="toggleEdit.iconDescription()">
                     </ng-icon>
                 </div>
 
-                <input type="text" [formControl]="iconDescField">
+                <input 
+                    type="text" 
+                    value="{{about.iconDescription}}" 
+                    [(ngModel)]="about.iconDescription"
+                    name="iconDescription"
+                >
             </form>
         </div>
     </div>
@@ -54,18 +63,23 @@
         </div>
 
         <div>
-            <form #f="ngForm" *ngIf="about.titleEdit"
-                (ngSubmit)="update.title(titleField.value); toggleEdit.title()"
+            <form *ngIf="about.titleEdit"
+                (ngSubmit)="toggleEdit.title()"
             >
                 <div class="flex">
                     <ng-icon 
                         name="bootstrapPencil" 
                         class="little-pen" 
-                        (click)="toggleEdit.title(); update.title(titleField.value)">
+                        (click)="toggleEdit.title()">
                     </ng-icon>
                 </div>
 
-                <input type="text" [formControl]="titleField">
+                <input 
+                    type="text" 
+                    value="{{about.title}}" 
+                    [(ngModel)]="about.title"
+                    name="title"
+                >
             </form>
         </div>
 
@@ -75,31 +89,37 @@
                     name="bootstrapPencil" 
                     class="little-pen" 
                     *ngIf="editable" 
-                    (click)="toggleEdit.content(); update.content(contentField.value)">
+                    (click)="toggleEdit.content()">
             </ng-icon>
         </div>
 
 
         <div>
-            <form #f="ngForm" *ngIf="about.contentEdit"
-                (ngSubmit)="update.content(contentField.value); toggleEdit.content()"   
+            <form *ngIf="about.contentEdit"
+                (ngSubmit)="toggleEdit.content()"   
             >
                 <div class="flex">
                     <label> <h4> Content </h4> </label> 
                     <ng-icon 
                         name="bootstrapPencil" 
                         class="little-pen" 
-                        (click)="toggleEdit.content(); update.content(contentField.value)">
+                        (click)="toggleEdit.content()">
                     </ng-icon>
                 </div>
 
-                <textarea [formControl]="contentField" type="input"></textarea>
+                <textarea 
+                    [(ngModel)]="about.content" 
+                    type="input" 
+                    value={{about.content}}
+                    name="content"
+                    >
+                </textarea>
             </form>
         </div>
 
         <div 
             class="submit-button"
-            *ngIf="editable && inputDirty()"
+            *ngIf="editable"
             >
             <button (click)="saveAbout()"> Submit changes </button>
         </div>

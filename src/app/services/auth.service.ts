@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { User } from '../user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  token: boolean = false;
+  apiUrl: string = "http://localhost:8080/user/"
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string):boolean {
+  login(user: User): void {
     // http logic and jwt autentication
-
-    this.token = (username == "user" && password == "1234");
-
-    if(this.token) {
-      localStorage.setItem("log-token", "logeado")
-    }
-
-    return this.token;
+    this.http.post<User>(this.apiUrl + "login", user).subscribe(
+      (user) => {
+        console.log(user);
+        localStorage.setItem("log-token", "logeado");
+        window.location.href = "/portofolio";
+      },error=>alert("Usuario o contraseña incorrecto"))
   }
 
   logout():void {

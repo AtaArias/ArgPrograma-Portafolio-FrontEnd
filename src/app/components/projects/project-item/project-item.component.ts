@@ -23,6 +23,7 @@ export class ProjectItemComponent {
   }
 
   updateSelf() {
+    console.log(this.project)
     this.update.emit({project: this.project, action:"update"});
   }
 

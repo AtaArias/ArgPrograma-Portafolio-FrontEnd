@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-log-in-page',
@@ -9,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./log-in-page.component.css']
 })
 export class LogInPageComponent {
+  myUser: User = new User();
+
   logInForm: FormGroup;
 
   userInput: AbstractControl;
@@ -28,9 +31,9 @@ export class LogInPageComponent {
     this.router.navigate(['/portofolio']);
   }
 
-  onSubmit(form: any): void {
-    if(this.auth.login(form.user, form.password)) {
-      this.goHome()
-    }
+  logIn(): void {
+    this.myUser.password = this.passInput.value;
+    this.myUser.username = this.userInput.value;
+    this.auth.login(this.myUser)
   }
 }

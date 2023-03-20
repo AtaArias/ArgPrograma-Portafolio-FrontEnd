@@ -21,18 +21,6 @@ export class AboutComponent {
     "iconDescription": () => {this.about.iconDescriptionEdit = !this.about.iconDescriptionEdit}
   }
 
-  update = {
-    "title": (data: string) => {this.about.title = data},
-    "content": (data: string) => {this.about.content = data},
-    "iconUrl": (data: string) => {this.about.iconUrl = data},
-    "iconDescription": (data: string) => {this.about.iconDescription = data}
-  }
-
-  titleField: FormControl = new FormControl();
-  contentField: FormControl = new FormControl();
-  iconUrlField: FormControl = new FormControl();
-  iconDescField: FormControl = new FormControl();
-
   constructor(private authService: AuthService, private aboutService: AboutService) {
 
   }
@@ -42,21 +30,9 @@ export class AboutComponent {
 
     this.aboutService.getAbout().subscribe(
       (about) => {
-        this.about = about;
-
-        this.titleField.setValue(this.about.title);
-        this.contentField.setValue(this.about.content);
-        this.iconUrlField.setValue(this.about.iconUrl);
-        this.iconDescField.setValue(this.about.iconDescription);
+        if (about)
+          this.about = about;
       })
-  }
-
-  inputDirty(): boolean{
-    return  this.titleField.dirty || 
-            this.contentField.dirty ||
-            this.iconDescField.dirty ||
-            this.iconDescField.dirty
-            ;
   }
 
   saveAbout(){

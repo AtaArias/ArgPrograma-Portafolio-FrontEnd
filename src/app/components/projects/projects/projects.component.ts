@@ -24,6 +24,7 @@ export class ProjectsComponent {
         // for each project on the list bring its chips
         this.projects.forEach(
           (project) => {
+            console.log(project);
             this.projectService.getChips(project).subscribe(
               (chips) => {
                 project.chips = chips;
@@ -41,6 +42,7 @@ export class ProjectsComponent {
 
   addProject(proj: Project) {
     console.log(proj);
+    this.projects.push(proj)
     this.projectService.addProject(proj).subscribe(
       (mssg) => {
         this.retrieveProjects();
@@ -53,14 +55,16 @@ export class ProjectsComponent {
     if(event.action == "update"){
       this.projectService.addProject(event.project).subscribe(
         (mssg) => {
-          this.retrieveProjects()
+          // posible id bugs
+          // if retrieveProjects isn't called
+          this.retrieveProjects();
           console.log(mssg);
         }
       );
     } else if (event.action == "delete"){
+      this.projects.splice(this.projects.indexOf(event.project), 1);
       this.projectService.deleteProject(event.project).subscribe(
         (mssg) => {
-          this.projects.splice(this.projects.indexOf(event.project), 1);
           console.log(mssg);
         }
       )
