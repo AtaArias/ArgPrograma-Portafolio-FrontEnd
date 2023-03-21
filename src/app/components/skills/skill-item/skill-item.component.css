@@ -29,3 +29,14 @@
 mat-card-title {
     text-align: center;
 }
+
+ng-icon {
+    font-size: 1.2em;
+    transition: 0.2s;
+}
+
+ng-icon:hover{
+    color: crimson;
+    scale: 1.5;
+    cursor: pointer;
+}

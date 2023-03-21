@@ -1,6 +1,8 @@
 <button 
     *ngIf="editable"
-    (click)="skillFormToggle()">
+    (click)="skillFormToggle()"
+    class="outline"
+    >
     <ng-icon 
         *ngIf="!skillForm"
         name="bootstrapPlus"
@@ -11,7 +13,7 @@
         name="bootstrapDash"
     >
     </ng-icon>
-</button>
+</button> 
 
 <form 
     *ngIf="skillForm && editable"
@@ -36,7 +38,12 @@
         </div>
     </div>
 
-    <button type="submit"> Agregar </button>
+    <button 
+        type="submit"
+        class="outline"
+    > 
+        <ng-icon name="bootstrapSave"></ng-icon>
+    </button>
 </form>
 
 <div class="grid">

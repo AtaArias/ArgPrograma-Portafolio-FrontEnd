@@ -1,8 +1,26 @@
 <div class="border">
-    <h2> Projectos </h2>
+    <div class="flex">
+        <h2> Projectos </h2>
 
+        <button 
+            class="outline"
+            *ngIf="logged"
+            (click)="toggleForm()"
+        >
+            <ng-icon
+                name="bootstrapPlus"
+                *ngIf="!showForm"
+            ></ng-icon>
+
+            <ng-icon
+                name="bootstrapDash"
+                *ngIf="showForm"
+            ></ng-icon>
+        </button>
+    </div>
+    
     <app-add-project-form
-        *ngIf="logged"
+        *ngIf="logged && showForm"
         (projectAdder)="addProject($event)"
     >
     </app-add-project-form>

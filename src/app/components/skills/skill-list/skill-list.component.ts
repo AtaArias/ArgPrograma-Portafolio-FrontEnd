@@ -31,11 +31,11 @@ export class SkillListComponent {
   }
 
   deleteSkill(skill: Skill) {
+    this.skills.splice(this.skills.indexOf(skill), 1);
+
     this.skillService.deleteSkill(skill).subscribe(
       (mssg) => {
         console.log(mssg);
-
-        this.skills.splice(this.skills.indexOf(skill), 1);
       }
     )
   }
@@ -46,10 +46,11 @@ export class SkillListComponent {
       percentage: this.percentageControl.value || 50,
       type: this.listType})
 
+    this.skills.push(newSkill);
+
     this.skillService.addSkill(newSkill).subscribe(
       (mssg) => {
         if(mssg == "Skill guardada") {
-          this.skills.push(newSkill);
         }
 
         console.log(mssg);

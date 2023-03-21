@@ -40,17 +40,20 @@ export class EducationComponent {
   myAddCard = (title: string, iconUrl: string, content: string): void => {
     let myCard: Card = new Card({title: title, iconUrl: iconUrl, content: content});
     
+    this.cards.push(myCard);
+    this.addCardToggle();
+
     this.cardManager.addEducationCard(myCard).subscribe( (message) => 
      {
       console.log(message);
       this.updateCards();
-      this.addCardToggle();
      })
   }
 
   removeCard(card: Card){
+    this.cards.splice(this.cards.indexOf(card), 1);
+
     this.cardManager.deleteEducationCard(card).subscribe( (message) => {
-      this.cards.splice(this.cards.indexOf(card), 1);
       console.log(message);
     }) 
   }

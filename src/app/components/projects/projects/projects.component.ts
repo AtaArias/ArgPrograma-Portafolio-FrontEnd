@@ -12,6 +12,7 @@ import { Project } from '../project-item/project-item.model';
 export class ProjectsComponent {
   projects: Project[] = [];
   logged: boolean = false;
+  showForm: boolean = false;
 
   constructor(private projectService: ProjectService, private authServce: AuthService) {
   }
@@ -69,5 +70,9 @@ export class ProjectsComponent {
         }
       )
     }
+  }
+
+  toggleForm(){
+    this.showForm = !this.showForm;
   }
 }

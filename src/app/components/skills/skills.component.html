@@ -1,15 +1,23 @@
-<h2> Hard skills </h2>
+<div class="border">
 
-<app-skill-list
-    [editable]="edit"
-    [skills]="hardSkills"
-    [listType]="'hard'"
-> </app-skill-list>
+    <h2> Hard skills </h2>
 
-<h2> Soft skills </h2>
+    <app-skill-list
+        [editable]="edit"
+        [skills]="hardSkills"
+        [listType]="'hard'"
+    > </app-skill-list>
 
-<app-skill-list
-    [editable]="edit"
-    [skills]="softSkills"
-    [listType]="'soft'"
-> </app-skill-list>
+    <hr>
+
+    <h2> Soft skills </h2>
+
+    <app-skill-list
+        [editable]="edit"
+        [skills]="softSkills"
+        [listType]="'soft'"
+    > </app-skill-list>
+
+    <hr>
+
+</div>
