@@ -17,7 +17,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CardManagerService {
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'https://portafolio-backend-5315.onrender.com';
 
   constructor(private http: HttpClient) { 
 

@@ -10,7 +10,7 @@ export class SkillService {
 
   constructor(private http: HttpClient) { }
 
-  urlApi: string = "http://localhost:8080/skill/";
+  urlApi: string = "https://portafolio-backend-5315.onrender.com/skill/";
 
   getSkills(tipo: String): Observable<Skill[]> {
     return this.http.get<Skill[]>(this.urlApi + "traer/" + tipo);

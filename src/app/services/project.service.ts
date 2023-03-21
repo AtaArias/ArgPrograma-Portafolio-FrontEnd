@@ -8,7 +8,7 @@ import { Chip } from '../components/projects/chip.model';
   providedIn: 'root'
 })
 export class ProjectService {
-  apiUrl: String = "http://localhost:8080/project/"
+  apiUrl: String = "https://portafolio-backend-5315.onrender.com/project/"
 
   constructor(private http: HttpClient) {
    }
