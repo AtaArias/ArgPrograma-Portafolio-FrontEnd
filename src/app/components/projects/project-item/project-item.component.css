@@ -1,5 +1,6 @@
 .wrapper {
     position: relative;
+    margin: 10px 0;
 }
 
 mat-card {
