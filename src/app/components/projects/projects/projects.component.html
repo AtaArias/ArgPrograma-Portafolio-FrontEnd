@@ -21,7 +21,7 @@
     
     <app-add-project-form
         *ngIf="logged && showForm"
-        (projectAdder)="addProject($event); toggleForm()"
+        (projectAdder)="toggleForm(); addProject($event)"
     >
     </app-add-project-form>
 
