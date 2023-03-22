@@ -22,6 +22,9 @@ export class ProjectsComponent {
       (projects) => {
         this.projects = projects;
 
+        // sort projects by date
+        this.projects.sort((a: Project, b: Project) => a.date < b.date ? -1 : 1);
+
         // for each project on the list bring its chips
         this.projects.forEach(
           (project) => {
