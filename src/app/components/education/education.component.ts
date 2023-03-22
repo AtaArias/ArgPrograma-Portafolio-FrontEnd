@@ -20,7 +20,7 @@ export class EducationComponent {
   }
 
   constructor(private cardManager: CardManagerService, private authService: AuthService) {
-    this.title = "Education";
+    this.title = "Educación y cursos";
   }
 
   updateCards() {

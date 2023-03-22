@@ -20,7 +20,7 @@ export class ExperienceComponent {
 
 
   constructor(private cardService: CardManagerService, private authService: AuthService) {
-    this.title = "Experience";
+    this.title = "Experiencia laboral";
   }
 
   updateCards() {
