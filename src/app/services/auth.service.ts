@@ -15,7 +15,6 @@ export class AuthService {
     // http logic and jwt autentication
     this.http.post<User>(this.apiUrl + "login", user).subscribe(
       (user) => {
-        console.log(user);
         localStorage.setItem("log-token", "logeado");
         window.location.href = "/portofolio";
       },error=>alert("Usuario o contraseña incorrecto"))

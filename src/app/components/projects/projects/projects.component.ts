@@ -25,7 +25,6 @@ export class ProjectsComponent {
         // for each project on the list bring its chips
         this.projects.forEach(
           (project) => {
-            console.log(project);
             this.projectService.getChips(project).subscribe(
               (chips) => {
                 project.chips = chips;
@@ -42,7 +41,6 @@ export class ProjectsComponent {
   }
 
   addProject(proj: Project) {
-    console.log(proj);
     this.projects.push(proj)
     this.projectService.addProject(proj).subscribe(
       (mssg) => {
