@@ -44,3 +44,7 @@ ng-icon:hover{
 mat-progress-spinner {
     color: var(--color-2)!important;
 }
+
+mat-card {
+    background-color: var(--color-4)!important;
+}

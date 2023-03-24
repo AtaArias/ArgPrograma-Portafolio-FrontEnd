@@ -1,0 +1,16 @@
+[debug] [2023-03-24T20:27:07.329Z] ----------------------------------------------------------------------
+[debug] [2023-03-24T20:27:07.330Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-03-24T20:27:07.330Z] CLI Version:   11.24.1
+[debug] [2023-03-24T20:27:07.330Z] Platform:      linux
+[debug] [2023-03-24T20:27:07.330Z] Node Version:  v18.12.1
+[debug] [2023-03-24T20:27:07.334Z] Time:          Fri Mar 24 2023 17:27:07 GMT-0300 (Argentina Standard Time)
+[debug] [2023-03-24T20:27:07.334Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-24T20:27:07.394Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-24T20:27:07.394Z] > authorizing via signed-in user (atahulpq@gmail.com)
+[debug] [2023-03-24T20:27:07.394Z] [iam] checking project ataarias for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-03-24T20:27:07.396Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ataarias:testIamPermissions [none]
+[debug] [2023-03-24T20:27:07.396Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ataarias:testIamPermissions x-goog-quota-user=projects/ataarias
+[debug] [2023-03-24T20:27:07.397Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ataarias:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-03-24T20:27:27.446Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/ataarias:testIamPermissions
+[debug] [2023-03-24T20:27:27.448Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ataarias [none]
