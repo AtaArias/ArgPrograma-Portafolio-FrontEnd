@@ -132,7 +132,7 @@ ng-icon:hover{
         align-items: center;
     }
 
-    info {
+    .info {
         top: 0px;
     }
 }
