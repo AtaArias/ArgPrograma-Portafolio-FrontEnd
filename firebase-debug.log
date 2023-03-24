@@ -14,3 +14,28 @@
 [debug] [2023-03-24T20:27:07.397Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ataarias:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
 [debug] [2023-03-24T20:27:27.446Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/ataarias:testIamPermissions
 [debug] [2023-03-24T20:27:27.448Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ataarias [none]
+[debug] [2023-03-24T20:27:33.386Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ataarias 200
+[debug] [2023-03-24T20:27:33.386Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ataarias {"projectId":"ataarias","projectNumber":"181354148747","displayName":"AtaArias","name":"projects/ataarias","resources":{"hostingSite":"ataarias"},"state":"ACTIVE","etag":"1_ea628262-c085-436d-9f46-ed8beeb602fc"}
+[info] 
+[info] === Deploying to 'ataarias'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-03-24T20:27:33.390Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ataarias/versions [none]
+[debug] [2023-03-24T20:27:33.391Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ataarias/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-03-24T20:27:40.447Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ataarias/versions 200
+[debug] [2023-03-24T20:27:40.448Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ataarias/versions {"name":"projects/181354148747/sites/ataarias/versions/253a8d9535803463","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ataarias]: beginning deploy... 
+[info] i  hosting[ataarias]: found 12 files in dist/front-end 
+[debug] [2023-03-24T20:27:40.489Z] [hosting] uploading with 200 concurrency
+[debug] [2023-03-24T20:27:40.594Z] [hosting] hash cache [ZGlzdC9mcm9udC1lbmQ] stored for 12 files
+[debug] [2023-03-24T20:27:40.595Z] [hosting][hash queue][FINAL] {"max":69,"min":21,"avg":33.416666666666664,"active":0,"complete":12,"success":12,"errored":0,"retried":0,"total":12,"elapsed":92}
+[debug] [2023-03-24T20:27:40.595Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/181354148747/sites/ataarias/versions/253a8d9535803463:populateFiles [none]
+[debug] [2023-03-24T20:27:40.595Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/181354148747/sites/ataarias/versions/253a8d9535803463:populateFiles {"files":{"/favicon.ico":"5ba04cf43d3c8c026bd5edd43046db96acb28b5686d99ea7d7e148feabfffc8f","/index.html":"b44c2498a5a392b09f99fc8695799f7f2963cd05ec45a44370dc5edc455ca8a5","/runtime.d264d3a42860edf0.js":"109aaba38b15ba4d9bdad04dbd02c5b469d47c474c742dfe29af17c1e51127d5","/3rdpartylicenses.txt":"2b2f1bf7b61b99f4f236a800d62d4e189aeb8f08094b6d7579e7d25eb9863e69","/assets/projects/codeTraveller.png":"d92fde60b071da7715d164e24b19deb17931f06ba95730036c40e8443e3d9a99","/polyfills.6a11300e4bf6a041.js":"05dd249b742afe19df8a8600feddd821b7cc84466ed448ddbac9d3a543d0ce76","/assets/projects/sudoku.png":"cbbfc3c2477ec7e134436f24ea0eb2cb6ee10cfa7bd5fd1854cc1692793ec317","/assets/projects/experimental.png":"a8b5e2b01f32b93181078face5783b20ee2dd864de63815b66bafbe745c8e186","/assets/projects/isometric.png":"3ab59e7ea3bd28e90fb1329406bbc293e1d71cfd7c26a01a96fa4db5647f533e","/styles.0c261f49a413f7f1.css":"19fb1887ea81277a7fb8d97067221a956b40ee3e74bd0985c61def3310c6438d","/main.13015dccb4c7fa4f.js":"50457d28a02f73addf1d8f464540509908c928852e38c1fb6ccbcba3a54fa97f","/assets/projects/finalProject.png":"00cd453537acb84409aa690239b314bdcf82854d56f714fcf9e793b459758c56"}}
+[debug] [2023-03-24T20:27:41.776Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/181354148747/sites/ataarias/versions/253a8d9535803463:populateFiles 200
+[debug] [2023-03-24T20:27:41.777Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/181354148747/sites/ataarias/versions/253a8d9535803463:populateFiles {"uploadRequiredHashes":["cbbfc3c2477ec7e134436f24ea0eb2cb6ee10cfa7bd5fd1854cc1692793ec317","3ab59e7ea3bd28e90fb1329406bbc293e1d71cfd7c26a01a96fa4db5647f533e"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ataarias/versions/253a8d9535803463/files"}
+[debug] [2023-03-24T20:27:41.780Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ataarias/versions/253a8d9535803463/files/cbbfc3c2477ec7e134436f24ea0eb2cb6ee10cfa7bd5fd1854cc1692793ec317 [none]
+[debug] [2023-03-24T20:27:41.781Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ataarias/versions/253a8d9535803463/files/cbbfc3c2477ec7e134436f24ea0eb2cb6ee10cfa7bd5fd1854cc1692793ec317 [stream]
+[debug] [2023-03-24T20:27:41.788Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ataarias/versions/253a8d9535803463/files/3ab59e7ea3bd28e90fb1329406bbc293e1d71cfd7c26a01a96fa4db5647f533e [none]
+[debug] [2023-03-24T20:27:41.788Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ataarias/versions/253a8d9535803463/files/3ab59e7ea3bd28e90fb1329406bbc293e1d71cfd7c26a01a96fa4db5647f533e [stream]
+[debug] [2023-03-24T20:27:41.793Z] [hosting][populate queue][FINAL] {"max":1186,"min":1186,"avg":1186,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1199}
+[debug] [2023-03-24T20:27:41.793Z] [hosting] uploads queued: 2
