@@ -43,3 +43,11 @@ button:hover, button:focus {
 p {
     white-space: pre-wrap;
 }
+
+@media (max-width: 600px) {
+    .card-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
