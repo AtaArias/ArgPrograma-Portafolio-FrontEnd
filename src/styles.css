@@ -33,6 +33,11 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+.login {
+    width: fit-content;
+}
+
 html, body { height: 100%; }
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -45,4 +50,9 @@ button {
 
 button.outline {
     background-color: transparent;
+}
+
+hr {
+    border-top: 1px solid red;
+    inset: false;
 }

@@ -1,26 +1,36 @@
 <nav class="flex">
-    <div>
+    <div class="icon">
         <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa" target="_blank">
             <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1676134779/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png" alt="">
         </a>
     </div>
 
-        <div class="flex sociales">
-            <a href="https://github.com/AtaArias" target="_blank">
-                <ng-icon name="bootstrapGithub"></ng-icon>
-            </a>
+    <div class="flex sociales">
+        <a href="https://github.com/AtaArias" target="_blank">
+            <ng-icon name="bootstrapGithub"></ng-icon>
+        </a>
 
-            <a href="https://www.instagram.com/ata_arias09/" target="_blank">
-                <ng-icon name="bootstrapInstagram"></ng-icon>
-            </a> 
-        </div>
+        <a href="https://www.instagram.com/ata_arias09/" target="_blank">
+            <ng-icon name="bootstrapInstagram"></ng-icon>
+        </a> 
+    </div>
 
+    <div class="login">
         <a routerLink="/logIn" *ngIf="!authService.logIn">
             <ng-icon name="bootstrapPerson"></ng-icon>
         </a>
 
-        <ng-icon name="bootstrapBoxArrowLeft" *ngIf="authService.logIn" (click)="authService.logout(); reloadPage()"> </ng-icon>
+        <ng-icon 
+            name="bootstrapBoxArrowLeft" 
+            *ngIf="authService.logIn" 
+            (click)="authService.logout(); 
+            reloadPage()"> 
+        </ng-icon>
+    </div>
 
+    <div class="burger">
+
+    </div>
 </nav>
 
 <section class="banner">

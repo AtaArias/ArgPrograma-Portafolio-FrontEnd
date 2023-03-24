@@ -13,8 +13,9 @@ nav {
 
 .banner {
     color: white;
-    height: 400px;
-    background-color: black;
+    height: 30vh;
+    max-height: 500px;
+    width: 100%;
 }
 
 .banner img {
@@ -22,6 +23,7 @@ nav {
     width: 100%;
 
     object-fit: cover;
+    object-position: left;
 }
 
 ng-icon {
@@ -43,4 +45,20 @@ a {
 
 .sociales {
     gap: 2em;
+}
+
+.burger {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .flex {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .icon {
+        display: none;
+    }
+
 }
