@@ -27,12 +27,13 @@ nav {
 ng-icon {
     color: white;
     font-size: 2em !important;
-    transition: 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition: 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 ng-icon:hover {
-    color: white;
+    color: var(--color-2);
     cursor: pointer;
+    scale: 1.2;
 }
 
 a {
