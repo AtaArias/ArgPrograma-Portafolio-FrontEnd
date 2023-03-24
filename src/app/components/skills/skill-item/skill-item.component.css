@@ -40,3 +40,7 @@ ng-icon:hover{
     scale: 1.5;
     cursor: pointer;
 }
+
+mat-progress-spinner {
+    color: var(--color-2)!important;
+}

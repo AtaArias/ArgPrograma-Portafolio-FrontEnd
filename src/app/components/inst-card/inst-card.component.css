@@ -8,6 +8,7 @@
     margin: 25px 0px;
     padding: 10px;
     display: grid;
+    background-color: var(--color-4);
 
     grid-template-columns: 1fr 4fr;
 

@@ -2,11 +2,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-1: #8C8DD9;
+    --color-2: #2B193D;
+    --color-3: #CCCBCB;
+    --color-4: #F2F1F1;
+    --color-5: #7F675B;
+}
+
 body {
     /*background-color: #14e6b8; */
     /*background-color: #313140; */
-    background: url(assets/layered-peaks-haikei.svg) no-repeat fixed center;
+    /* background: url(assets/low-poly-grid-haikei_16_9.svg) no-repeat fixed center; */
 
+    background-color: var(--color-1);
     background-size: cover;
 
     bottom: 0;

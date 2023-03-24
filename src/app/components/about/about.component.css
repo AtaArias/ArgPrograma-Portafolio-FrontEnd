@@ -81,6 +81,11 @@ form {
 
 .main {
     width: 100%;
+    height: 100%;
+    background-color: var(--color-4);
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(1, 1, 1, 0.2);
 }
 
 .submit-button {
