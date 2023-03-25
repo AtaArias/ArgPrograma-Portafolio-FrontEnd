@@ -1,6 +1,6 @@
 <div class="border" *ngIf="cards.length > 0 || editMode()">
     <div class="flex">
-        <h2> {{ title }} </h2>
+        <h1> <b> {{ title }} </b> </h1>
         <button *ngIf="editMode()" (click)="addCardToggle()" class="outline"> 
             <ng-icon name="bootstrapPlus" *ngIf="!addCardForm"></ng-icon> 
             <ng-icon name="bootstrapDash" *ngIf="addCardForm"></ng-icon>

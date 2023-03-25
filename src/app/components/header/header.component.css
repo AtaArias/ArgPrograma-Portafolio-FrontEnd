@@ -3,7 +3,7 @@ nav {
     position: sticky;
     top: 0;
 
-    background-color: var(--color-5);
+    background-color: var(--bcol-2);
     padding: 0px 30px;
 
     align-items: center;
@@ -33,7 +33,7 @@ ng-icon {
 }
 
 ng-icon:hover {
-    color: var(--color-2);
+    color: var(--tcol-2);
     cursor: pointer;
     scale: 1.2;
 }

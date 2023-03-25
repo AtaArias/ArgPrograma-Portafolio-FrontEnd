@@ -3,11 +3,24 @@
 }
 
 :root {
+    --bcol-1: #e9e7df;
+    --tcol-1: #1f255d;
+
+    --bcol-2: #f14704;
+    --tcol-2: #161a54;
+
+    --bcol-3: #b894fe;
+    --tcol-3: #44018b;
+
     --color-1: #8C8DD9;
     --color-2: #2B193D;
     --color-3: #CCCBCB;
     --color-4: #F2F1F1;
-    --color-5: #7F675B;
+    --color-5: #f14704;
+}
+
+h1 {
+    color: var(--tcol-1);
 }
 
 body {
@@ -15,7 +28,7 @@ body {
     /*background-color: #313140; */
     /* background: url(assets/low-poly-grid-haikei_16_9.svg) no-repeat fixed center; */
 
-    background-color: var(--color-1);
+    background-color: var(--bcol-1);
     background-size: cover;
 
     bottom: 0;
